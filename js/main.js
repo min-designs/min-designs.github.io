@@ -65,7 +65,7 @@ function openLightbox(work) {
         content.innerHTML = `<img src="${work.img}" alt="${work.title}"><p style="color:#ccc;text-align:center;margin-top:1rem;">${work.title} — ${work.desc}</p>`;
     } else {
         content.innerHTML = `
-            <div style="text-align:center;color:#fff;">
+            <div style="text-align:center;color:#333;">
                 <div style="font-size:4rem;margin-bottom:1rem;">📁</div>
                 <h2 style="font-size:1.5rem;margin-bottom:0.5rem;">${work.title}</h2>
                 <p style="color:#888;">${work.desc}</p>
@@ -90,8 +90,8 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 window.addEventListener('scroll', () => {
     const nav = document.getElementById('nav');
     nav.style.background = window.scrollY > 50
-        ? 'rgba(15,15,15,0.95)'
-        : 'rgba(15,15,15,0.85)';
+        ? 'rgba(255,255,255,0.95)'
+        : 'rgba(255,255,255,0.85)';
 });
 
 // === 启动 ===

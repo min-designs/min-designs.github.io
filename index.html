@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amber · 视觉设计师</title>
+    <title>武诗敏 · 视觉设计师</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -12,11 +12,10 @@
     <!-- 导航 -->
     <nav class="nav" id="nav">
         <div class="nav-inner">
-            <a href="#hero" class="nav-logo">Amber</a>
+            <a href="#hero" class="nav-logo">Shimin</a>
             <div class="nav-links">
                 <a href="#works">作品</a>
                 <a href="#about">关于</a>
-                <a href="#skills">技能</a>
                 <a href="#contact">联系</a>
             </div>
             <button class="nav-toggle" id="navToggle">☰</button>
@@ -25,34 +24,36 @@
 
     <!-- 首屏 -->
     <section class="hero" id="hero">
-        <div class="hero-content">
-            <p class="hero-greeting">你好，我是</p>
-            <h1 class="hero-title">Amber</h1>
-            <p class="hero-subtitle">视觉设计师</p>
-            <p class="hero-desc">专注于电竞海报、品牌视觉与游戏美宣。<br>用画面讲故事，用颜色抓眼球。</p>
-            <div class="hero-actions">
-                <a href="#works" class="btn btn-primary">查看作品</a>
-                <a href="#contact" class="btn btn-outline">联系我</a>
-            </div>
+        <div class="hero-bg">
+            <img src="images/works/page_01.png" alt="cover" class="hero-cover">
         </div>
-        <div class="hero-visual">
-            <div class="hero-shape"></div>
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <h1 class="hero-title">武诗敏</h1>
+                <p class="hero-subtitle">视觉设计师</p>
+                <p class="hero-desc">运营设计 · 品牌视觉 · UI 设计</p>
+                <div class="hero-actions">
+                    <a href="#works" class="btn btn-primary">查看作品</a>
+                    <a href="#contact" class="btn btn-outline">联系我</a>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- 作品 -->
     <section class="works" id="works">
-        <h2 class="section-title">作品</h2>
+        <div class="works-header">
+            <h2 class="section-title">作品</h2>
+            <p class="work-count" id="workCount">29 件作品</p>
+        </div>
         <div class="works-filter" id="worksFilter">
             <button class="filter-btn active" data-cat="all">全部</button>
-            <button class="filter-btn" data-cat="esports">电竞海报</button>
-            <button class="filter-btn" data-cat="brand">品牌视觉</button>
-            <button class="filter-btn" data-cat="illustration">插画</button>
+            <button class="filter-btn" data-cat="ops">运营设计</button>
+            <button class="filter-btn" data-cat="brand">品牌设计</button>
+            <button class="filter-btn" data-cat="ui">UI 设计</button>
             <button class="filter-btn" data-cat="other">其他</button>
         </div>
-        <div class="works-grid" id="worksGrid">
-            <!-- JS 动态填充 -->
-        </div>
+        <div class="works-grid" id="worksGrid"></div>
     </section>
 
     <!-- 关于 -->
@@ -60,60 +61,23 @@
         <h2 class="section-title">关于我</h2>
         <div class="about-content">
             <div class="about-text">
-                <p>我是 Amber，一名视觉设计师。</p>
-                <p>擅长电竞及游戏领域的海报设计、品牌视觉设计，对色彩和排版有自己的理解。相信好的设计不是装饰——是在对的地方用对的方式说对的话。</p>
-                <p>目前在寻找有趣的项目，如果你有赛事海报、游戏美宣、品牌视觉等需求，欢迎联系。</p>
+                <p>我是武诗敏，一名视觉设计师。</p>
+                <p>专注运营设计、品牌视觉与 UI 设计。擅长电竞及游戏领域的海报设计、主视觉 KV、品牌规范以及界面设计。相信好的设计不是装饰——是用对的方式在对的地方传达对的信息。</p>
+                <p>如果你有赛事海报、品牌视觉、活动主视觉等需求，欢迎联系。</p>
             </div>
             <div class="about-meta">
                 <div class="meta-item">
-                    <span class="meta-label">所在地</span>
-                    <span class="meta-value">中国</span>
-                </div>
-                <div class="meta-item">
-                    <span class="meta-label">经验</span>
-                    <span class="meta-value">视觉设计 / 品牌 / 电竞</span>
+                    <span class="meta-label">方向</span>
+                    <span class="meta-value">运营设计 / 品牌 / UI</span>
                 </div>
                 <div class="meta-item">
                     <span class="meta-label">工具</span>
                     <span class="meta-value">Photoshop / Illustrator / Figma</span>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 技能 -->
-    <section class="skills" id="skills">
-        <h2 class="section-title">技能</h2>
-        <div class="skills-grid">
-            <div class="skill-card">
-                <div class="skill-icon">🎨</div>
-                <h3>视觉设计</h3>
-                <p>海报、主视觉、KV、Banner</p>
-            </div>
-            <div class="skill-card">
-                <div class="skill-icon">🎮</div>
-                <h3>电竞/游戏美宣</h3>
-                <p>赛事海报、角色宣传、活动视觉</p>
-            </div>
-            <div class="skill-card">
-                <div class="skill-icon">🏷️</div>
-                <h3>品牌设计</h3>
-                <p>Logo、VI 规范、品牌延展</p>
-            </div>
-            <div class="skill-card">
-                <div class="skill-icon">🖌️</div>
-                <h3>插画</h3>
-                <p>商业插画、角色设计、海报插画</p>
-            </div>
-            <div class="skill-card">
-                <div class="skill-icon">📐</div>
-                <h3>版式设计</h3>
-                <p>画册、书籍、宣传物料</p>
-            </div>
-            <div class="skill-card">
-                <div class="skill-icon">🌈</div>
-                <h3>配色方案</h3>
-                <p>色彩系统、渐变风格、视觉调性</p>
+                <div class="meta-item">
+                    <span class="meta-label">联系</span>
+                    <span class="meta-value">📧 wushimin@example.com</span>
+                </div>
             </div>
         </div>
     </section>
@@ -121,22 +85,21 @@
     <!-- 联系 -->
     <section class="contact" id="contact">
         <h2 class="section-title">联系我</h2>
-        <p class="contact-desc">有项目想合作？直接发邮件或微信联系。</p>
+        <p class="contact-desc">有项目想合作？欢迎联系。</p>
         <div class="contact-cards">
             <div class="contact-card">
                 <span class="contact-icon">✉️</span>
-                <span class="contact-text">amber@example.com</span>
+                <span class="contact-text">wushimin@example.com</span>
             </div>
             <div class="contact-card">
                 <span class="contact-icon">💬</span>
-                <span class="contact-text">微信：amber_design</span>
+                <span class="contact-text">微信：待补充</span>
             </div>
         </div>
     </section>
 
-    <!-- 页脚 -->
     <footer class="footer">
-        <p>© 2026 Amber. All rights reserved.</p>
+        <p>© 2026 武诗敏. All rights reserved.</p>
     </footer>
 
     <script src="js/main.js"></script>

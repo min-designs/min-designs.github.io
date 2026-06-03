@@ -1,15 +1,13 @@
 // === 作品数据（替换为你的真实作品） ===
-const works = [
-    { tag: 'esports', title: 'KPL 春季赛主视觉', desc: '王者荣耀职业联赛海报', img: null },
-    { tag: 'esports', title: '战队出征海报', desc: 'AG 超玩会赛季宣传 KV', img: null },
-    { tag: 'esports', title: '电竞总决赛舞台视觉', desc: '冠军杯决赛主舞台背景', img: null },
-    { tag: 'brand', title: '游戏品牌 VI 升级', desc: '从 Logo 到延展物料', img: null },
-    { tag: 'brand', title: '直播间视觉包装', desc: '电竞主播个人品牌', img: null },
-    { tag: 'illustration', title: '角色原画海报', desc: '游戏角色宣传插画', img: null },
-    { tag: 'illustration', title: '国风系列插画', desc: '传统元素现代演绎', img: null },
-    { tag: 'other', title: '短剧宣传物料', desc: '番茄小说改编短剧海报', img: null },
-    { tag: 'other', title: '活动主视觉', desc: '线下电竞活动视觉设计', img: null },
-];
+const works = [];
+for (let i = 1; i <= 32; i++) {
+    const page = String(i).padStart(2, '0');
+    works.push({
+        tag: 'all',
+        title: `作品集 第${i}页`,
+        img: `images/works/page_${page}.png`
+    });
+}
 
 // === 渲染作品 ===
 const grid = document.getElementById('worksGrid');

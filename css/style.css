@@ -116,6 +116,32 @@ section { padding: 5rem 3rem; max-width: 1400px; margin: 0 auto; }
 .work-card-page { font-size: 0.7rem; color: #ccc; }
 .work-card:hover .work-card-tag { color: #1a1a1a; }
 
+/* === Load More === */
+.show-more-wrap {
+    grid-column: 1 / -1; display: flex; justify-content: center; padding: 2rem 0;
+}
+.show-more-btn {
+    background: #fff; border: 1px solid #e5e5e5; border-radius: 100px;
+    padding: 0.9rem 2.5rem; cursor: pointer; font-family: inherit;
+    display: flex; align-items: center; gap: 0.75rem;
+    transition: all 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+.show-more-btn:hover { border-color: #5b5fe3; background: #faf9ff; }
+.show-more-text { font-size: 0.9rem; font-weight: 600; color: #1a1a1a; letter-spacing: 1px; }
+.show-more-count { font-size: 0.78rem; color: #bbb; }
+.show-more-arrow { font-size: 0.9rem; color: #5b5fe3; transition: transform 0.35s; }
+.show-more-btn:hover .show-more-arrow { transform: translateY(3px); }
+.show-more-wrap.expanding .show-more-btn { opacity: 0; transform: translateY(-10px); pointer-events: none; }
+
+/* Expanded cards */
+.work-card.expanded {
+    animation: expandIn 0.5s ease both;
+}
+@keyframes expandIn {
+    from { opacity: 0; transform: translateY(20px) scale(0.95); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
 /* === About === */
 .about-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 4rem; }
 .about-title { font-size: 3rem; font-weight: 800; color: #1a1a1a; margin-bottom: 1.5rem; letter-spacing: -1px; }

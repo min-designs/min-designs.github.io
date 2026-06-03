@@ -33,32 +33,71 @@ const works = [
 // === 渲染 ===
 const grid = document.getElementById('worksGrid');
 let currentFilter = 'all';
+const INITIAL_SHOW = 6;
+let showingAll = false;
+let currentFiltered = [];
 
 function renderWorks(filter = 'all') {
     currentFilter = filter;
+    showingAll = false;
+    currentFiltered = filter === 'all' ? works : works.filter(w => w.tag === filter);
+
     grid.innerHTML = '';
-    const filtered = filter === 'all' ? works : works.filter(w => w.tag === filter);
 
-    filtered.forEach((w, i) => {
-        const card = document.createElement('div');
-        card.className = 'work-card';
-        card.setAttribute('data-tag', w.tag);
-        card.style.animationDelay = `${i * 0.05}s`;
-        card.innerHTML = `
-            <div class="work-card-img">
-                <img src="${w.img}" alt="${w.title}" loading="lazy">
-            </div>
-            <div class="work-card-info">
-                <span class="work-card-tag">${getTagName(w.tag)}</span>
-                <span class="work-card-page">第${w.page}页</span>
-            </div>
+    const toShow = currentFiltered.slice(0, INITIAL_SHOW);
+    toShow.forEach((w, i) => renderCard(w, i));
+
+    // Add "show more" button if needed
+    if (currentFiltered.length > INITIAL_SHOW) {
+        const btnWrap = document.createElement('div');
+        btnWrap.className = 'show-more-wrap';
+        btnWrap.id = 'showMoreWrap';
+        btnWrap.innerHTML = `
+            <button class="show-more-btn" id="showMoreBtn">
+                <span class="show-more-text">查看更多</span>
+                <span class="show-more-count">${currentFiltered.length - INITIAL_SHOW} 件作品</span>
+                <span class="show-more-arrow">↓</span>
+            </button>
         `;
-        card.addEventListener('click', () => openLightbox(w));
-        grid.appendChild(card);
-    });
+        grid.appendChild(btnWrap);
+        document.getElementById('showMoreBtn').addEventListener('click', expandWorks);
+    }
 
-    // Update count
-    document.getElementById('workCount').textContent = `${filtered.length} 件作品`;
+    document.getElementById('workCount').textContent = `${currentFiltered.length} 件作品`;
+}
+
+function renderCard(w, i) {
+    const card = document.createElement('div');
+    card.className = 'work-card';
+    card.setAttribute('data-tag', w.tag);
+    card.style.animationDelay = `${i * 0.05}s`;
+    card.innerHTML = `
+        <div class="work-card-img">
+            <img src="${w.img}" alt="${w.title}" loading="lazy">
+        </div>
+        <div class="work-card-info">
+            <span class="work-card-tag">${getTagName(w.tag)}</span>
+            <span class="work-card-page">第${w.page}页</span>
+        </div>
+    `;
+    card.addEventListener('click', () => openLightbox(w));
+    return card;
+}
+
+function expandWorks() {
+    showingAll = true;
+    const btnWrap = document.getElementById('showMoreWrap');
+    btnWrap.classList.add('expanding');
+
+    setTimeout(() => {
+        const remaining = currentFiltered.slice(INITIAL_SHOW);
+        remaining.forEach((w, i) => {
+            const card = renderCard(w, i);
+            card.classList.add('expanded');
+            grid.insertBefore(card, btnWrap);
+        });
+        btnWrap.remove();
+    }, 300);
 }
 
 function getTagName(tag) {

@@ -6,42 +6,53 @@
     <title>武诗敏 · 视觉设计师</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- 导航 -->
     <nav class="nav" id="nav">
         <div class="nav-inner">
-            <a href="#hero" class="nav-logo">Shimin</a>
+            <a href="#hero" class="nav-logo">WSM</a>
             <div class="nav-links">
-                <a href="#works">作品</a>
-                <a href="#about">关于</a>
-                <a href="#contact">联系</a>
+                <a href="#works">WORKS</a>
+                <a href="#about">ABOUT</a>
+                <a href="#contact">CONTACT</a>
             </div>
             <button class="nav-toggle" id="navToggle">☰</button>
         </div>
     </nav>
 
-    <!-- 首屏 -->
     <section class="hero" id="hero">
-        <div class="hero-content">
-            <p class="hero-greeting">你好，我是</p>
-            <h1 class="hero-title">武诗敏</h1>
-            <p class="hero-subtitle">视觉设计师</p>
-            <p class="hero-desc">运营设计 · 品牌视觉 · UI 设计</p>
-            <div class="hero-actions">
-                <a href="#works" class="btn btn-primary">查看作品</a>
-                <a href="#contact" class="btn btn-outline">联系我</a>
+        <div class="hero-grid">
+            <div class="hero-text">
+                <div class="hero-tag">VISUAL DESIGNER</div>
+                <h1 class="hero-title">
+                    <span class="hero-line">武诗敏</span>
+                    <span class="hero-line accent">视觉设计作品集</span>
+                </h1>
+                <p class="hero-desc">
+                    运营设计 / 品牌视觉 / UI 设计<br>
+                    用电竞的冲击力做设计，用品牌的逻辑做视觉。
+                </p>
+                <div class="hero-actions">
+                    <a href="#works" class="btn btn-fill">查看作品 ↓</a>
+                    <a href="#contact" class="btn btn-line">联系我</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-block block-1"></div>
+                <div class="hero-block block-2"></div>
+                <div class="hero-block block-3"></div>
             </div>
         </div>
     </section>
 
-    <!-- 作品 -->
     <section class="works" id="works">
-        <div class="works-header">
-            <h2 class="section-title">作品</h2>
-            <p class="work-count" id="workCount">29 件作品</p>
+        <div class="section-bar">
+            <span class="bar-num">01</span>
+            <span class="bar-line"></span>
+            <span class="bar-label">SELECTED WORKS</span>
         </div>
+        <h2 class="works-title">作品</h2>
         <div class="works-filter" id="worksFilter">
             <button class="filter-btn active" data-cat="all">全部</button>
             <button class="filter-btn" data-cat="ops">运营设计</button>
@@ -52,50 +63,51 @@
         <div class="works-grid" id="worksGrid"></div>
     </section>
 
-    <!-- 关于 -->
     <section class="about" id="about">
-        <h2 class="section-title">关于我</h2>
-        <div class="about-content">
-            <div class="about-text">
-                <p>我是武诗敏，一名视觉设计师。</p>
-                <p>专注运营设计、品牌视觉与 UI 设计。擅长电竞及游戏领域的海报设计、主视觉 KV、品牌规范以及界面设计。相信好的设计不是装饰——是用对的方式在对的地方传达对的信息。</p>
-                <p>如果你有赛事海报、品牌视觉、活动主视觉等需求，欢迎联系。</p>
+        <div class="section-bar">
+            <span class="bar-num">02</span>
+            <span class="bar-line"></span>
+            <span class="bar-label">ABOUT</span>
+        </div>
+        <div class="about-grid">
+            <div class="about-intro">
+                <h2 class="about-title">关于我</h2>
+                <p class="about-lead">视觉设计师，专注电竞及游戏领域的运营设计、品牌视觉与 UI 设计。</p>
+                <p class="about-text">擅长用色彩和排版制造视觉冲击力。信好的设计不是装饰——是在对的地方用对的方式传达对的信息。</p>
             </div>
-            <div class="about-meta">
-                <div class="meta-item">
-                    <span class="meta-label">方向</span>
-                    <span class="meta-value">运营设计 / 品牌 / UI</span>
+            <div class="about-detail">
+                <div class="detail-row">
+                    <span class="detail-label">方向</span>
+                    <span class="detail-val">运营设计 / 品牌视觉 / UI</span>
                 </div>
-                <div class="meta-item">
-                    <span class="meta-label">工具</span>
-                    <span class="meta-value">Photoshop / Illustrator / Figma</span>
+                <div class="detail-row">
+                    <span class="detail-label">工具</span>
+                    <span class="detail-val">Photoshop / Illustrator / Figma</span>
                 </div>
-                <div class="meta-item">
-                    <span class="meta-label">联系</span>
-                    <span class="meta-value">📧 wushimin@example.com</span>
+                <div class="detail-row">
+                    <span class="detail-label">邮箱</span>
+                    <span class="detail-val">待补充@email.com</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 联系 -->
     <section class="contact" id="contact">
-        <h2 class="section-title">联系我</h2>
-        <p class="contact-desc">有项目想合作？欢迎联系。</p>
-        <div class="contact-cards">
-            <div class="contact-card">
-                <span class="contact-icon">✉️</span>
-                <span class="contact-text">wushimin@example.com</span>
-            </div>
-            <div class="contact-card">
-                <span class="contact-icon">💬</span>
-                <span class="contact-text">微信：待补充</span>
-            </div>
+        <div class="section-bar">
+            <span class="bar-num">03</span>
+            <span class="bar-line"></span>
+            <span class="bar-label">CONTACT</span>
         </div>
+        <h2 class="contact-title">联系我</h2>
+        <p class="contact-desc">有项目合作？写信给我。</p>
+        <a href="mailto:待补充@email.com" class="contact-link">待补充@email.com →</a>
     </section>
 
     <footer class="footer">
-        <p>© 2026 武诗敏. All rights reserved.</p>
+        <div class="footer-inner">
+            <p>© 2026 武诗敏</p>
+            <p>VISUAL DESIGNER</p>
+        </div>
     </footer>
 
     <script src="js/main.js"></script>

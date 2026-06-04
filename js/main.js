@@ -169,8 +169,45 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 // === 导航阴影 ===
 window.addEventListener('scroll', () => {
     document.getElementById('nav').style.background = window.scrollY > 50
-        ? 'rgba(255,255,255,0.95)' : 'rgba(255,255,255,0.85)';
+        ? 'rgba(250,250,249,0.95)' : 'rgba(250,250,249,0.85)';
 });
+
+// === 首屏视差 ===
+(function() {
+    const hero = document.getElementById('hero');
+    const image = document.getElementById('heroImage');
+    if (!hero || !image) return;
+    let ticking = false;
+
+    function updateParallax(x, y) {
+        const rect = hero.getBoundingClientRect();
+        const cx = rect.left + rect.width / 2;
+        const cy = rect.top + rect.height / 2;
+        // Subtle scale + translate for immersive depth
+        const moveX = (x - cx) / rect.width * 15;
+        const moveY = (y - cy) / rect.height * 15;
+        image.style.transform = `scale(1.06) translate(${-moveX}px, ${-moveY}px)`;
+    }
+
+    hero.addEventListener('mousemove', function(e) {
+        if (window.innerWidth <= 768) return;
+        if (!ticking) {
+            requestAnimationFrame(function() {
+                updateParallax(e.clientX, e.clientY);
+                ticking = false;
+            });
+            ticking = true;
+        }
+    });
+
+    hero.addEventListener('mouseleave', function() {
+        image.style.transform = 'scale(1) translate(0, 0)';
+        image.style.transition = 'transform 1s cubic-bezier(0.25, 0.1, 0.25, 1)';
+    });
+    hero.addEventListener('mouseenter', function() {
+        image.style.transition = 'transform 0.15s ease-out';
+    });
+})();
 
 // === 启动 ===
 renderWorks();
